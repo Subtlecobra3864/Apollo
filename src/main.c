@@ -7,5 +7,6 @@
 int main(int argc, char *argv[]){
 	printf("Hello, World!\n");
 	window_create();
+	window_loop();
 	return 0; // Exit success
 }

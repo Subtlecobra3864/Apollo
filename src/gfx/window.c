@@ -17,6 +17,14 @@
 
 struct Window window; // global window
 
+void window_loop(){
+	while (!glfwWindowShouldClose(window.handle)){
+		glfwSwapBuffers(window.handle);
+		glfwPollEvents();
+	}
+}
+
+
 // create a window
 void window_create(){
 	if (!glfwInit()){
@@ -39,4 +47,11 @@ void window_create(){
 	}
 
 	glfwMakeContextCurrent(window.handle);
+	if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
+        fprintf(stderr, "%s",  "error initializing GLAD\n");
+        glfwTerminate();
+        exit(1);
+    }
+
+	glfwSwapInterval(1);
 }
