@@ -23,6 +23,8 @@ SRC = main.c\
 	  gfx/window.c\
 	  gfx/window.h\
 	  gfx/gfx.h\
+	  include/glad/src/glad.c\
+	  include/glad/src/glad.h\
 
 rebuild:
 	rm -rf build/*
